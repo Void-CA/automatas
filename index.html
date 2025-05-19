@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Visualizador de Autómatas</title>
+    <script src="https://unpkg.com/viz.js@2.1.2/viz.js"></script>
+    <script src="https://unpkg.com/viz.js@2.1.2/full.render.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 800px;
+        margin: auto;
+      }
+      textarea,
+      input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+      }
+      button {
+        padding: 8px 12px;
+        margin-top: 10px;
+      }
+      #graph {
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Visualizador de Autómatas (DFA)</h1>
+
+    <label>Estados (separados por coma):</label>
+    <input type="text" id="states" value="q0,q1" />
+
+    <label>Símbolos de entrada (separados por coma):</label>
+    <input type="text" id="symbols" value="0,1" />
+
+    <label>Estado inicial:</label>
+    <input type="text" id="initial" value="q0" />
+
+    <label>Estados finales (separados por coma):</label>
+    <input type="text" id="finals" value="q1" />
+
+    <label>Transiciones (formato: estado,símbolo,destino por línea):</label>
+    <textarea id="transitions">
+q0,0,q0
+q0,1,q1
+q1,0,q1
+q1,1,q0</textarea
+    >
+
+    <button onclick="enviar()">Generar autómata</button>
+
+    <div id="graph"></div>
+
+    <script src="https://unpkg.com/viz.js@2.1.2/viz.js"></script>
+    <script src="https://unpkg.com/viz.js@2.1.2/full.render.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
